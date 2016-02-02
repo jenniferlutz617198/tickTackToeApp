@@ -86,11 +86,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aX4-dE-KDt">
+                                <rect key="frame" x="34" y="490" width="71" height="65"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="centerLabel" destination="xen-vS-TuF" id="8VK-aJ-fzq"/>
+                        <outlet property="currentPlayerLabel" destination="aX4-dE-KDt" id="Va6-1s-TjC"/>
                         <outlet property="lowerLeftLabel" destination="CVe-uB-vg4" id="11j-Ny-BGZ"/>
                         <outlet property="lowerMiddleLabel" destination="Qhm-i7-mcG" id="2kI-yI-7V2"/>
                         <outlet property="lowerRightLabel" destination="jlB-07-9LG" id="NSN-Qf-G4C"/>

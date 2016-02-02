@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var currentPlayerLabel: UILabel!
     @IBOutlet weak var topLeftLabel: UILabel!
 
     @IBOutlet weak var topMiddleLabel: UILabel!
@@ -26,6 +28,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lowerMiddleLabel: UILabel!
     
     @IBOutlet weak var lowerRightLabel: UILabel!
+    
+    let players = "XY"
     
     override func viewDidLoad() {
         super.viewDidLoad()
