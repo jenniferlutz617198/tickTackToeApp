@@ -21,7 +21,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var middleRightLabel: UILabel!
     
+    @IBOutlet weak var lowerLeftLabel: UILabel!
     
+    @IBOutlet weak var lowerMiddleLabel: UILabel!
+    
+    @IBOutlet weak var lowerRightLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

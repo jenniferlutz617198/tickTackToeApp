@@ -91,6 +91,9 @@
                     </view>
                     <connections>
                         <outlet property="centerLabel" destination="xen-vS-TuF" id="8VK-aJ-fzq"/>
+                        <outlet property="lowerLeftLabel" destination="CVe-uB-vg4" id="11j-Ny-BGZ"/>
+                        <outlet property="lowerMiddleLabel" destination="Qhm-i7-mcG" id="2kI-yI-7V2"/>
+                        <outlet property="lowerRightLabel" destination="jlB-07-9LG" id="NSN-Qf-G4C"/>
                         <outlet property="middleRightLabel" destination="Qh6-wr-5Xh" id="9vq-4R-sUM"/>
                         <outlet property="middleleftLabel" destination="l0z-7T-sJh" id="9ZB-E7-JiB"/>
                         <outlet property="topLeftLabel" destination="v7J-PE-3GQ" id="dwD-wy-Uhd"/>
