@@ -30,10 +30,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var lowerRightLabel: UILabel!
     
     let players = "XY"
+    var counter = 0
+    var currentPlayer: Character
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+    }
+    @IBAction func changePlayersWhenTapped(sender: UITapGestureRecognizer) {
     }
 
     
