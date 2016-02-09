@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var currentPlayerLabel: UILabel!
+    
     @IBOutlet weak var topLeftLabel: UILabel!
     @IBOutlet weak var topMiddleLabel: UILabel!
     @IBOutlet weak var topRightLabel: UILabel!
@@ -19,13 +20,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var lowerLeftLabel: UILabel!
     @IBOutlet weak var lowerMiddleLabel: UILabel!
     @IBOutlet weak var lowerRightLabel: UILabel!
-    let players = "XO"
-    let counter = 0
-    let currentPlayer: Character!
+    
+    let letters = "XO"
+    var counter = 0
+    var currentLetter: Character!
     var myArray = [UILabel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCurrentLetter()
         myArray = [topLeftLabel, topMiddleLabel, topRightLabel, middleleftLabel,centerLabel, middleRightLabel, lowerLeftLabel, lowerMiddleLabel, lowerRightLabel]
     }
     
@@ -36,9 +39,44 @@ class ViewController: UIViewController {
         {
             if CGRectContainsPoint(topLeftLabel.frame, selectedPoint)
             {
-                topLeftLabel.text = String(currentPlayer)
+                topLeftLabel.text = String(currentLetter)
             }
+   
+        }
+        
+        
+        
+        counter++
+        if counter == 26
+        {
+            reset()
+        }
+        getCurrentLetter()
+
     }
+    
+    func getCurrentLetter()
+    {
+        let myRange = Range<String.Index>(start: letters.startIndex.advancedBy(counter), end: letters.startIndex.advancedBy(counter+1))
+        currentPlayerLabel.text = letters.substringWithRange(myRange)
+        currentLetter = Character (letters.substringWithRange(myRange))
+    }
+    
+    func getCurrentPlayer(){
+        let myRange = Range<String.Index>(start: letters.startIndex.advancedBy(counter), end: letters.startIndex.advancedBy(counter+1))
+            currentPlayerLabel.text = letters.substringWithRange(myRange)
+            currentLetter = Character(letters.substringWithRange(myRange))
+
+    }
+    
+        
+        
+        
+        
+        
+        
+        
+        
     
     
 
