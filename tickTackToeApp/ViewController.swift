@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lowerMiddleLabel: UILabel!
     @IBOutlet weak var lowerRightLabel: UILabel!
     
-    let letters = "XO"
+    let letters = "OX"
     var counter = 0
     var currentLetter: Character!
     var myArray = [UILabel]()
@@ -37,17 +37,14 @@ class ViewController: UIViewController {
         print(selectedPoint)
         for label in myArray
         {
-            if CGRectContainsPoint(topLeftLabel.frame, selectedPoint)
+            if CGRectContainsPoint(label.frame, selectedPoint)
             {
-                topLeftLabel.text = String(currentLetter)
+                label.text = String(currentLetter)
             }
    
         }
-        
-        
-        
         counter++
-        if counter == 26
+        if counter == 2
         {
             reset()
         }
@@ -62,12 +59,29 @@ class ViewController: UIViewController {
         currentLetter = Character (letters.substringWithRange(myRange))
     }
     
-    func getCurrentPlayer(){
-        let myRange = Range<String.Index>(start: letters.startIndex.advancedBy(counter), end: letters.startIndex.advancedBy(counter+1))
-            currentPlayerLabel.text = letters.substringWithRange(myRange)
-            currentLetter = Character(letters.substringWithRange(myRange))
-
+    func reset()
+    {
+        counter = 0
+        let alert = UIAlertController(title: "resetting Counter", message: "Press OK to reset", preferredStyle: UIAlertControllerStyle.Alert)
+        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: clearLabels)
+        alert.addAction(okAction)
+        presentViewController(alert, animated: true, completion: nil)
     }
+    
+    func clearLabels(action: UIAlertAction)
+    {
+        topLeftLabel.text = ""
+        topMiddleLabel.text = ""
+        topRightLabel.text = ""
+        middleleftLabel.text = ""
+        centerLabel.text = ""
+        middleRightLabel.text = ""
+        lowerLeftLabel.text = ""
+        lowerMiddleLabel.text = ""
+        lowerRightLabel.text = ""
+    }
+    
+    
     
         
         
