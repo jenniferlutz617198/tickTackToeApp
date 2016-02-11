@@ -33,6 +33,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func whenTapped(sender: UITapGestureRecognizer) {
+        currentPlayerLabel.text = "XO"
         let selectedPoint = sender.locationInView(self.view)
         print(selectedPoint)
         for label in myArray
@@ -59,6 +60,84 @@ class ViewController: UIViewController {
         currentLetter = Character (letters.substringWithRange(myRange))
     }
     
+    func checkForWinner()
+        
+    {
+        
+        if topLeftLabel.text == topMiddleLabel.text && topRightLabel.text == middleleftLabel.text && lowerLeftLabel.text != ""
+            
+        {
+            
+            presentWinningAlert("\(topRightLabel.text!)")
+            
+        }
+            
+        else if middleleftLabel.text == centerLabel.text && centerLabel.text == middleRightLabel.text && middleRightLabel.text != ""
+            
+        {
+            
+            presentWinningAlert("\(middleRightLabel.text!)")
+            
+        }
+            
+        else if lowerLeftLabel.text == lowerMiddleLabel.text && lowerMiddleLabel.text == lowerRightLabel.text && lowerRightLabel.text != ""
+            
+        {
+            
+            presentWinningAlert("\(lowerRightLabel.text!)")
+            
+        }
+            
+        else if topLeftLabel.text == middleleftLabel.text && middleleftLabel == lowerLeftLabel.text && lowerLeftLabel.text != ""
+            
+        {
+            
+            presentWinningAlert("\(lowerLeftLabel.text!)")
+            
+        }
+            
+        else if topMiddleLabel.text == centerLabel.text && centerLabel.text == lowerMiddleLabel.text && lowerMiddleLabel.text != ""
+            
+        {
+            
+            presentWinningAlert("\(lowerMiddleLabel.text!)")
+            
+        }
+            
+        else if topRightLabel.text == middleRightLabel.text && middleRightLabel.text == lowerRightLabel.text && lowerRightLabel.text != ""
+            
+        {
+            
+            presentWinningAlert("\(lowerRightLabel.text!)")
+            
+        }
+            
+        else if topLeftLabel.text == centerLabel.text && centerLabel.text == lowerRightLabel.text && lowerRightLabel.text != ""
+            
+        {
+            
+            presentWinningAlert("\(lowerRightLabel.text!)")
+            
+        }
+            
+        else if label3.text == label5.text && label5.text == label7.text && label7.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label7.text!)")
+            
+        }
+        
+        
+        
+        if moveCounter == 9
+            
+        {
+            
+            presentWinningAlert("No One")
+            
+        }
+
     func reset()
     {
         counter = 0
