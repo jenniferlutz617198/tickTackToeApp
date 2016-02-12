@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     var counter = 0
     var currentLetter: Character!
     var myArray = [UILabel]()
+    var moveCounter: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +42,11 @@ class ViewController: UIViewController {
             if CGRectContainsPoint(label.frame, selectedPoint)
             {
                 label.text = String(currentLetter)
+                
+                moveCounter++
+                counter++
             }
-   
+            
         }
         counter++
         if counter == 2
@@ -50,7 +54,7 @@ class ViewController: UIViewController {
             reset()
         }
         getCurrentLetter()
-
+        
     }
     
     func getCurrentLetter()
@@ -145,10 +149,11 @@ class ViewController: UIViewController {
             presentWinningAlert("No One")
             
         }
-
+        
+    }
     
-        func reset()
-       {
+    func reset()
+    {
         
         counter = 0
         
@@ -157,10 +162,10 @@ class ViewController: UIViewController {
         alert.addAction(okAction)
         presentViewController(alert, animated: true, completion: nil)
         
-       }
+    }
     
     
-        func clearLabels(action: UIAlertAction)
+    func clearLabels(action: UIAlertAction)
     {
         topLeftLabel.text = ""
         topMiddleLabel.text = ""
@@ -175,13 +180,7 @@ class ViewController: UIViewController {
     
     
     
-        
-        
-        
-        
-        
-        
-        
-        
+    
+    
     
 }
