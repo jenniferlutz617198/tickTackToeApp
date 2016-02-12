@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func whenTapped(sender: UITapGestureRecognizer) {
-        currentPlayerLabel.text = "XO"
+        
         let selectedPoint = sender.locationInView(self.view)
         print(selectedPoint)
         for label in myArray
@@ -48,7 +48,8 @@ class ViewController: UIViewController {
             }
             
         }
-        counter++
+        checkForWinner()
+        
         if counter == 2
         {
             reset()
@@ -67,16 +68,17 @@ class ViewController: UIViewController {
     func presentWinningAlert(action: String)
     {
         let alert = UIAlertController(title: "you won", message: "click ok", preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: nil)
+        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: clearLabels)
         alert.addAction(okAction)
         presentViewController(alert, animated: true, completion: nil)
+        
     }
     
     func checkForWinner()
         
     {
         
-        if topLeftLabel.text == topMiddleLabel.text && topRightLabel.text == middleleftLabel.text && lowerLeftLabel.text != ""
+        if topLeftLabel.text == topMiddleLabel.text && topRightLabel.text == topMiddleLabel.text && topRightLabel.text != ""
             
         {
             
@@ -92,7 +94,7 @@ class ViewController: UIViewController {
             
         }
             
-        else if lowerLeftLabel.text == lowerMiddleLabel.text && lowerMiddleLabel.text == lowerRightLabel.text && lowerRightLabel.text != ""
+        else if lowerLeftLabel.text == lowerMiddleLabel.text && lowerRightLabel.text == lowerMiddleLabel.text && lowerRightLabel.text != ""
             
         {
             
@@ -116,7 +118,7 @@ class ViewController: UIViewController {
             
         }
             
-        else if topRightLabel.text == middleRightLabel.text && middleRightLabel.text == lowerRightLabel.text && lowerRightLabel.text != ""
+        else if topRightLabel.text == middleRightLabel.text && lowerRightLabel.text == middleRightLabel.text && lowerRightLabel.text != ""
             
         {
             
@@ -157,10 +159,7 @@ class ViewController: UIViewController {
         
         counter = 0
         
-        let alert = UIAlertController(title: "resetting Counter", message: "Press OK to reset", preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: clearLabels)
-        alert.addAction(okAction)
-        presentViewController(alert, animated: true, completion: nil)
+        
         
     }
     
