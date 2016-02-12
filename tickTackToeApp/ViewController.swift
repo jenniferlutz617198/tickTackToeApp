@@ -60,6 +60,14 @@ class ViewController: UIViewController {
         currentLetter = Character (letters.substringWithRange(myRange))
     }
     
+    func presentWinningAlert(action: String)
+    {
+        let alert = UIAlertController(title: "you won", message: "click ok", preferredStyle: UIAlertControllerStyle.Alert)
+        let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: nil)
+        alert.addAction(okAction)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
     func checkForWinner()
         
     {
@@ -120,11 +128,11 @@ class ViewController: UIViewController {
             
         }
             
-        else if label3.text == label5.text && label5.text == label7.text && label7.text != ""
+        else if topRightLabel.text == centerLabel.text && centerLabel.text == lowerLeftLabel.text && lowerLeftLabel.text != ""
             
         {
             
-            presentWinningAlert("\(label7.text!)")
+            presentWinningAlert("\(lowerLeftLabel.text!)")
             
         }
         
@@ -138,16 +146,21 @@ class ViewController: UIViewController {
             
         }
 
-    func reset()
-    {
+    
+        func reset()
+       {
+        
         counter = 0
+        
         let alert = UIAlertController(title: "resetting Counter", message: "Press OK to reset", preferredStyle: UIAlertControllerStyle.Alert)
         let okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: clearLabels)
         alert.addAction(okAction)
         presentViewController(alert, animated: true, completion: nil)
-    }
+        
+       }
     
-    func clearLabels(action: UIAlertAction)
+    
+        func clearLabels(action: UIAlertAction)
     {
         topLeftLabel.text = ""
         topMiddleLabel.text = ""
@@ -171,9 +184,4 @@ class ViewController: UIViewController {
         
         
     
-    
-
-
-
-
 }
